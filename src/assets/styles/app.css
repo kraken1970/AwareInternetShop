@@ -1,5 +1,7 @@
 @import 'normalize.css/normalize.css';
-@import './lib/bootstrap.css';
+@import './icomoon.css';
+@import './lib/jquery.formstyler.css';
+@import './lib/jquery.formstyler.theme.css';
 @import './fonts.css';
 @import './header.css';
 @import './media.css';
