@@ -41,8 +41,9 @@ span {
 .main-wrapper {
   padding: 0;
   min-width: 320px;
+  width: 1920px;
   position: relative;
-  /* overflow: hidden; *//*КОСЯК!!!!*/
+  /*overflow: hidden;*//*КОСЯК!!!!*/
   opacity: 1;
   min-height: 100%;
 }
@@ -69,6 +70,7 @@ span {
 
 .logo {
   margin-right: 40px;
+  padding-bottom: 7px;
 }
 
 .main-menu {
@@ -79,7 +81,10 @@ span {
     position: relative;
     &:hover {
       .dropdown-content {
-        display: block;
+        opacity: 1;
+        margin-top: 0;
+        left: -10px;
+        visibility: visible;
       }
     }
   }
@@ -101,9 +106,12 @@ span {
   background-color: #222222;
   padding: 30px;
   width: 240px;
-  display: none;
+  opacity: 0;
+  margin-top: 30px;
+  transition: opacity 0.3s, margin-top 0.4s;
   top: 100%;
-  left: -10px;
+  left: -10000px;
+  visibility: hidden;
   &::before {
     content: '';
     display: block;
@@ -120,6 +128,9 @@ span {
   list-style: none;
   &__item {
     margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   &__link {
     color: #bcbcbc;
@@ -133,10 +144,11 @@ span {
 
 .search {
   flex: 1;
+  /* width: 100%; */
   position: relative;
   margin-right: 48px;
   &__input {
-    width: 80%;
+    width: 90%;
     height: 30px;
     background-color: #f6f6f6;
     padding: 0 40px 0 20px;
@@ -165,8 +177,65 @@ span {
     font-size: 12px;
   }
   [class*="icon"] {
-    font-size: 20px;
+    font-size: 18px;
     color: $color;
-    margin-right: 6px;
+    margin-right: 5px;
   }
+}
+
+.profile-menu {
+  list-style: none;
+  display: flex;
+  margin-right: -20px;
+  &__item {
+    position: relative;
+    &:hover {
+      .dropdown-content {
+        opacity: 1;
+        margin-top: 0;
+        left: -10px;
+        visibility: visible;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    line-height: 80px;
+    padding: 0 20px;
+    [class*="icon"] {
+      font-size: 18px;
+      color: $color;
+      vertical-align: middle;
+    }
+  }
+}
+
+.basket {
+  position: relative;
+  line-height: $line-height;
+}
+
+.bi-price {
+  margin-left: 15px;
+  font-family: 'Oswald-Bold';
+  font-size: 12px;
+  color: #222;
+  vertical-align: middle;
+}
+
+.bage {
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $color-blue;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 17px;
+  color: #ffffff;
+  font-size: 9px;
+  text-align: center;
+
+  position: absolute;
+  top: -7px;
+  right: -10px;
 }
