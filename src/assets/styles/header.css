@@ -4,6 +4,7 @@ $font-size: 14px;
 $line-height: 1.4;
 $color: #222222;
 $color-blue: #1f4ba5;
+$color-danger: #ff3f2b;
 
 body {
   color: $color;
@@ -58,6 +59,20 @@ span {
   vertical-align: middle;
 }
 
+/* button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: $color-blue;
+  padding: 0 25px;
+  font-size: 12px;
+  border-radius: 20px;
+  font-family: 'VarelaRound-Regular', Arial, sans-serif;
+  line-height: 30px;
+}
+
 /* header */
 
 .header {
@@ -86,6 +101,7 @@ span {
     display: block;
     padding: 0 21px;
     [class*="icon"] {
+      margin-left: 3px;
       font-size: 8px;
       color: $color-blue;
     }
@@ -147,6 +163,7 @@ span {
   width: 240px;
   opacity: 0;
   margin-top: 30px;
+  z-index: 99;
   transition: opacity 0.3s, margin-top 0.4s;
   top: 100%;
   left: -10000px;
@@ -200,7 +217,7 @@ span {
   &__button {
     position: absolute;
     top: 5px;
-    right: 8px;
+    right: 3px;
     font-family: 'icomoon' !important;
     font-size: 18px;
     font-weight: 700;
@@ -216,20 +233,20 @@ span {
     font-size: 12px;
   }
   [class*="icon"] {
-    font-size: 18px;
+    font-size: 20px;
     color: $color;
-    margin-right: 5px;
+    margin-right: 6px;
   }
 }
 
 .profile-menu {
   list-style: none;
   display: flex;
-  margin-right: -20px;
+  margin-right: -17px;
   &__link {
     display: block;
     line-height: 80px;
-    padding: 0 20px;
+    padding: 0 17px;
     [class*="icon"] {
       font-size: 18px;
       color: $color;
@@ -324,7 +341,131 @@ span.badge {
         max-width: 100%;
       }
     }
+    &__info {
+      flex: 1;
+      .product__title {
+        margin-bottom: 10px;
+      }
+    }
+    &__details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .price {
+        margin-right: 10px;
+      }
+    }
+    &__delete {
+      padding: 0 10px 0 0 ;
+      margin-left: 20px;
+      flex: none;
+      font-size: 12px;
+      color: #d5d5d5;
+      a {
+        color: inherit;
+        &:hover {
+          color: $color;
+        }
+      }
+    }
+  }
+  .cart-footer {
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    .total {
+      width: 60px;
+      flex: none;
+      margin-right: 20px;
+      text-align: right;
+    }
+    .price {
+      margin-right: 28px;
+    }
   }
 }
 
+.price {
+  font-size: 12px;
+  font-family: 'Oswald-Bold';
+  letter-spacing: 1.2px;
+  &--danger {
+    color: #ff3f2b;
+  }
+}
 
+.total {
+  color: #b8b8b8;
+  line-height: 18px;
+  font-family: 'PT_Serif-Web-Italic';
+  font-size: 12px;
+}
+
+.product {
+  &__title {
+    color: $color;
+    font-size: 12px;
+    line-height: 16px;
+    a {
+      color: inherit;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__details {
+    color: #b8b8b8;
+    /* line-height: 18px; */
+    font-family: 'PT_Serif-Web-Italic';
+    font-size: 12px;
+  }
+}
+
+/* Content */
+
+.header-inner {
+  position: relative;
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .category {
+    display: block;
+  }
+  .header-inner__title {
+    font-size: 48px;
+  }
+  .bread-crambs {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.bread-crambs {
+  display: flex;
+  .bread-crambs__item {
+    margin-right: 4px;
+  }
+  .bread-crambs__link {
+    font-size: 12px;
+    color: #868686;
+    &:hover {
+      color: $color;
+    }
+  }
+}
+
+.category {
+  font-family: 'Oswald-Bold';
+  color: #1f4ba5;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+/* l4 start */
