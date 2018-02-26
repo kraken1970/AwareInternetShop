@@ -43,10 +43,8 @@ span {
 .main-wrapper {
   padding: 0;
   min-width: 320px;
-  
-  
   position: relative;
-  /*overflow: hidden;*//*КОСЯК!!!!*/
+  overflow: hidden;/*КОСЯК!!!!*/
   opacity: 1;
   min-height: 100%;
 }
@@ -468,4 +466,45 @@ span.badge {
   text-transform: uppercase;
   letter-spacing: 1.2px;
 }
-/* l4 start */
+
+.filter {
+  display: flex;
+  border-bottom: 1px solid #ececec;
+  min-height: 60px;
+  .filter-sidebar {
+    display: flex;
+    align-items: center;
+    width: 240px;
+    padding: 15px 30px;
+    flex: none;
+    border-right: 1px solid #ececec;
+  }
+  .filter-content {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    flex: 1;/*тянем на всю ширину контента*/
+  }
+  .filter__title {
+    color: #979797;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.toggle-filter {
+  color: #d5d5d5;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 20px;
+  transition: all 0.3s;
+  &:hover {
+    color: $color-blue;
+  }
+  .sr-only {
+    display: none;
+  }
+}
+
