@@ -6,6 +6,13 @@ $color: #222222;
 $color-blue: #1f4ba5;
 $color-danger: #ff3f2b;
 
+* {
+  box-sizing: border-box;
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
 body {
   color: $color;
   font: $font-weight $font-size/$line-height $font-family, Arial, sans-serif;
@@ -44,9 +51,12 @@ span {
   padding: 0;
   min-width: 320px;
   position: relative;
-  overflow: hidden;/*КОСЯК!!!!*/
+  /*overflow: hidden;*//*КОСЯК!!!!*/
   opacity: 1;
   min-height: 100%;
+  height: auto;
+  height: 100%;
+  
 }
 
 /* icons */
@@ -436,6 +446,7 @@ span.badge {
   }
   .header-inner__title {
     font-size: 48px;
+    margin: 0;
   }
   .bread-crambs {
     position: absolute;
@@ -483,12 +494,34 @@ span.badge {
     display: flex;
     align-items: center;
     padding: 15px 30px;
-    flex: 1;/*тянем на всю ширину контента*/
+    /*flex: 1;*//*тянем на всю ширину контента*/
   }
   .filter__title {
     color: #979797;
     font-size: 12px;
     line-height: 16px;
+  }
+  .filter-list {
+   margin: 0;
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+   .filter-list__item {
+     margin-left: 10px;
+     &:first-child {
+       margin-left: 0;
+     }
+   }
+   .filter-list__link {
+     font-size: 16px;
+     color: #d5d5d5;
+     &:hover {
+       color: #888888;
+     }
+   }
+   .filter-list__item.active .filter-list__link {
+     color: $color;
+   }
   }
 }
 
@@ -505,6 +538,58 @@ span.badge {
   }
   .sr-only {
     display: none;
+  }
+}
+
+.sort {
+  display: flex;
+  input {
+    display: none;
+  }
+  input:checked  + .sort__item {
+    color: #ffffff;
+    background-color: $color;
+    padding: 0 20px;
+  }
+  .sort__item {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    margin-left: 20px;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 20px;
+    cup
+    &:hover {
+      color: $color-blue;
+    }
+    [class*="icon"] {
+      color: #d5d5d5;
+      margin-left: 5px;
+    }
+  }
+}
+
+.hide {
+	position: absolute;
+	left: 0; 
+	top: 0;
+	height: 0; 
+	width: 0;
+	overflow: hidden;
+	z-index: -1;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.tab-cont { 
+	opacity: 1;
+	transition: opacity 0.4s;
+	visibility: visible;
+	&.hide {
+		opacity: 0;
   }
 }
 
