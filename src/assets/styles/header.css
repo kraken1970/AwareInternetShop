@@ -1,3 +1,4 @@
+
 $font-weight: 400;
 $font-family: 'VarelaRound-Regular';
 $font-size: 14px;
@@ -550,6 +551,12 @@ span.badge {
     color: #ffffff;
     background-color: $color;
     padding: 0 20px;
+    [class*="icon"] {
+      color: #ffffff;
+      .path1::before {
+        content: '\e902';
+      }
+    }
   }
   .sort__item {
     display: flex;
@@ -590,6 +597,18 @@ span.badge {
 	visibility: visible;
 	&.hide {
 		opacity: 0;
+  }
+}
+
+.box-main {
+  display: flex;
+  .sidebar {
+    width: 240px;
+    flex: none;
+    border-right: 1px solid #ececec;
+  }
+  .content {
+    flex: 1;
   }
 }
 

@@ -1985,6 +1985,14 @@ span.badge {
     padding: 0 20px;
   }
 
+.sort input:checked  + .sort__item [class*="icon"] {
+      color: #ffffff;
+    }
+
+.sort input:checked  + .sort__item [class*="icon"] .path1::before {
+        content: '\e902';
+      }
+
 .sort .sort__item {
     display: -webkit-box;
     display: -webkit-flex;
@@ -2039,6 +2047,30 @@ cup
 
 .tab-cont.hide {
 		opacity: 0;
+  }
+
+.box-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -js-display: flex;
+  display: flex;
+}
+
+.box-main .sidebar {
+    width: 240px;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+        -ms-flex: none;
+            flex: none;
+    border-right: 1px solid #ececec;
+  }
+
+.box-main .content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1 1 0%;
   }
 
 /* Large Devices, Wide Screens */
