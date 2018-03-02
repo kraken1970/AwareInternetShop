@@ -14,6 +14,10 @@ $color-danger: #ff3f2b;
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 body {
   color: $color;
   font: $font-weight $font-size/$line-height $font-family, Arial, sans-serif;
@@ -610,5 +614,77 @@ span.badge {
   .content {
     flex: 1;
   }
+}
+
+.accordion {
+  border-bottom: 1px solid #ececec;
+  .accordion__head {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-top: 1px solid #ececec;
+    &:first-child {
+      border-top: none;
+    }
+    .accordion__title {
+      font-family: 'Oswald-Bold';
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+    span {
+      color: #b8b8b8;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  }
+  .accordion__body {
+    padding: 0 30px 35px;
+    .check-list {
+      list-style-type: none;
+      .check-list__item {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .check-list__text {
+        font-size: 12px;
+        line-height: 24px;
+        cursor: pointer;
+      }
+    }
+    /* для price рaзбивка на 2 колонки */
+    .check-list--column {
+      .check-list__item {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: -4px;
+        width: 50%;
+        padding-right: 10px;
+      }
+    }
+  }
+  /* если добавляется open то - меняется на + */
+  .open {
+    span::before {
+      content: "\e909";
+    }
+  }
+}
+
+.slider-range__input-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-renge__input {
+  width: 25%;
+  padding: 0;
+  
 }
 
