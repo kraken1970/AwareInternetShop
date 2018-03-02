@@ -34,6 +34,7 @@ ul, li, a {
   list-style-type: none;
   text-decoration: none;
   padding: 0;
+  margin: 0;
 }
 
 span {
@@ -642,7 +643,7 @@ span.badge {
     }
   }
   .accordion__body {
-    padding: 0 30px 35px;
+    padding: 0 30px 25px;
     .check-list {
       list-style-type: none;
       .check-list__item {
@@ -675,16 +676,68 @@ span.badge {
     }
   }
 }
-
+/* Упраление 2-м ползунком */
 .slider-range__input-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 15px;
+  .input-left {
+    text-align-last: left;
+  }
+  .inpur-right {
+    text-align: right;
+  }
 }
 
 .slider-renge__input {
-  width: 25%;
-  padding: 0;
-  
+  width: 30%;
+  border: none;
+  outline: none;
+  font-family: 'VarelaRound-Regular';
+  font-size: 12px;
+  line-height: 24px;
 }
 
+.ui-widget.ui-widget-content {
+    border: none;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-radius: 4px;
+}
+
+.ui-widget-content {
+    background-color: #efefef;
+    color: #333333;
+}
+
+.ui-slider-horizontal {
+    height: 10px;
+}
+
+.ui-widget-header {
+    background-color: #1f4ba5;
+    color: #333333;
+    font-weight: 700;
+}
+
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 17px;
+    height: 17px;
+    border: 4px solid #1f4ba5;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus {
+    border: 4px solid #1f4ba5;
+    border-radius: 50%;
+    background: #fff;
+    outline: none;
+}
